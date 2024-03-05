@@ -131,6 +131,6 @@ def cafes():
     )  # Render the cafes page template with the list of cafes
 
 
-# Check if the script is the main program and run the app.
+# Check if the script is the main program and run the app
 if __name__ == "__main__":
     app.run(debug=True, port=5001)
