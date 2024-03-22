@@ -5,11 +5,16 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectField, URLField
 from wtforms.validators import DataRequired, URL
 import csv
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 # Create a Flask application instance
 app = Flask(__name__)
 # Set a secret key for securely signing the session cookie
-app.config["SECRET_KEY"] = "8BYkEfBA6O6donzWlSihBXox7C0sKR6b"
+app.config["SECRET_KEY"] = os.environ.get("secret_key")
+print(app.config["SECRET_KEY"])
 # Apply Bootstrap5 styling to the app
 Bootstrap5(app)
 
